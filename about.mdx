@@ -1,0 +1,121 @@
+---
+title: About
+description: Learn about The Token Linguist's background, expertise, and approach to coaching and consulting
+---
+
+## Meet Your Token Linguist Coach
+
+With over a decade of experience in computational linguistics and natural language processing, I founded The Token Linguist to help professionals navigate the complex world of linguistic technologies. My journey began in academic research, where I developed novel tokenization algorithms for low-resource languages, and evolved into practical applications across various industries.
+
+<Columns cols={2}>
+  <Card title="Academic Background" icon="graduation-cap" href="#background">
+    PhD in Computational Linguistics with publications in top NLP conferences and journals.
+  </Card>
+  <Card title="Industry Experience" icon="briefcase" href="#experience">
+    Led NLP teams at tech companies, building systems that process millions of tokens daily.
+  </Card>
+</Columns>
+
+## Professional Journey
+
+My career spans both academia and industry, giving me a unique perspective on applying linguistic research to real-world problems. I've worked on projects ranging from machine translation systems to conversational AI assistants, always focusing on the practical implementation of theoretical concepts.
+
+<Steps>
+  <Step title="Research Foundations" icon="microscope">
+    Started with fundamental research in tokenization and morphological analysis, publishing papers on subword segmentation algorithms.
+  </Step>
+  <Step title="Industry Applications" icon="factory">
+    Transitioned to industry roles where I built production NLP systems, learning the challenges of scaling linguistic technologies.
+  </Step>
+  <Step title="Consulting Practice" icon="users">
+    Established The Token Linguist to share expertise through coaching and consulting, helping others avoid common pitfalls.
+  </Step>
+  <Step title="Community Building" icon="globe">
+    Created resources and workshops to democratize access to advanced linguistic technologies.
+  </Step>
+</Steps>
+
+## Expertise Areas
+
+I specialize in several key areas of computational linguistics, with particular focus on tokenization and language model optimization.
+
+<Tabs>
+  <Tab title="Tokenization" icon="scissors">
+    Expert in various tokenization strategies including BPE, WordPiece, and SentencePiece. I can help you choose the right approach for your specific use case.
+    
+    <CodeGroup tabs="BPE Example,WordPiece Example">
+      ````python
+# Byte Pair Encoding implementation
+from collections import Counter
+
+def get_vocab(text):
+    vocab = Counter(text.split())
+    return vocab
+
+text = "The token linguist provides expert guidance"
+vocab = get_vocab(text)
+print(f"Initial vocab size: {len(vocab)}")
+      ````
+      ````python
+# WordPiece tokenization example
+from transformers import BertTokenizer
+
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+text = "The Token Linguist provides expert guidance."
+tokens = tokenizer.tokenize(text)
+ids = tokenizer.convert_tokens_to_ids(tokens)
+print(f"Tokens: {tokens}")
+print(f"IDs: {ids}")
+      ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Language Models" icon="brain">
+    Deep knowledge of transformer architectures, fine-tuning techniques, and model optimization strategies.
+    
+    <Expandable title="Model Expertise" default-open="true">
+      - BERT and RoBERTa architectures
+      - GPT-style generative models
+      - Multi-lingual model adaptation
+      - Domain-specific fine-tuning
+    </Expandable>
+  </Tab>
+  <Tab title="NLP Pipelines" icon="pipeline">
+    Design and implementation of end-to-end NLP systems from data preprocessing to model deployment.
+    
+    <Callout kind="info">I emphasize robust, maintainable pipeline design that can scale with your needs.</Callout>
+  </Tab>
+</Tabs>
+
+## Teaching Philosophy
+
+My coaching approach is rooted in the belief that complex linguistic technologies should be accessible to all professionals. I focus on building strong foundations while providing practical tools you can immediately apply to your work.
+
+<ExpandableGroup>
+  <Expandable title="Core Principles" default-open="true">
+    - **Hands-on Learning**: Every concept is reinforced with practical exercises
+    - **Progressive Complexity**: Start simple, build to advanced applications
+    - **Real-world Focus**: Emphasize techniques that work in production environments
+    - **Individualized Pace**: Adapt teaching to your learning style and goals
+  </Expandable>
+  <Expandable title="Learning Outcomes" default-open="false">
+    By the end of our coaching engagement, you'll be able to:
+    - Implement tokenization strategies for various languages
+    - Fine-tune language models for specific tasks
+    - Design and deploy NLP pipelines
+    - Troubleshoot common issues in linguistic systems
+  </Expandable>
+</ExpandableGroup>
+
+## Industry Impact
+
+My work has influenced how organizations approach linguistic technologies, from small startups to large enterprises. I've helped teams reduce development time by 50% and improve model accuracy by 30% through better tokenization and preprocessing strategies.
+
+<Callout kind="success">Featured speaker at major NLP conferences including ACL, EMNLP, and NeurIPS.</Callout>
+
+## Beyond Consulting
+
+When not coaching or consulting, I contribute to open-source projects, write technical articles, and mentor early-career researchers. I'm passionate about advancing the field of computational linguistics and making its benefits accessible to a broader audience.
+
+## Get in Touch
+
+Ready to discuss how The Token Linguist can help you achieve your goals in linguistic technologies? Schedule a free consultation to explore how we can work together.

@@ -1,0 +1,171 @@
+---
+title: Resources
+description: Comprehensive collection of guides, tutorials, and tools for linguistic technology professionals
+---
+
+## Learning Resources
+
+The Token Linguist maintains a curated collection of resources to support your journey in mastering linguistic technologies. These materials are designed to complement our coaching services and provide ongoing reference for your projects.
+
+<Columns cols={3}>
+  <Card title="Beginner Guides" icon="book-open" href="#beginner">
+    Step-by-step tutorials for those new to tokenization and NLP fundamentals.
+  </Card>
+  <Card title="Advanced Topics" icon="graduation-cap" href="#advanced">
+    Deep dives into complex linguistic algorithms and model architectures.
+  </Card>
+  <Card title="Tools & Libraries" icon="tool" href="#tools">
+    Recommended software and frameworks for implementing linguistic systems.
+  </Card>
+</Columns>
+
+## Beginner-Friendly Tutorials
+
+Start your linguistic technology journey with these foundational resources that break down complex concepts into manageable steps.
+
+<Steps>
+  <Step title="Understanding Tokens" icon="hash">
+    Learn what tokens are and why they're fundamental to language processing.
+    
+    <Expandable title="Key Concepts" default-open="true">
+      - Character vs. word vs. subword tokenization
+      - Vocabulary size and its impact on model performance
+      - Handling special tokens and unknown words
+    </Expandable>
+    
+    <CodeGroup tabs="Simple Example,Advanced Example">
+      ````python
+# Simple word tokenization
+text = "The Token Linguist helps developers."
+words = text.split()
+print(f"Words: {words}")
+print(f"Count: {len(words)}")
+      ````
+      ````python
+# Advanced subword tokenization
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
+text = "The Token Linguist helps developers understand tokenization."
+tokens = tokenizer.tokenize(text)
+ids = tokenizer.convert_tokens_to_ids(tokens)
+print(f"Subword tokens: {tokens}")
+print(f"Token IDs: {ids}")
+print(f"Vocabulary coverage: {len(set(ids))} unique tokens")
+      ````
+    </CodeGroup>
+  </Step>
+  <Step title="Basic Preprocessing" icon="filter">
+    Master text cleaning and normalization techniques essential for quality NLP.
+    
+    <Callout kind="tip">Always normalize your text before tokenization to ensure consistent results.</Callout>
+  </Step>
+  <Step title="First Tokenization Project" icon="code">
+    Build your first tokenization pipeline from scratch.
+  </Step>
+</Steps>
+
+## Advanced Resources
+
+For experienced practitioners looking to deepen their expertise in cutting-edge linguistic technologies.
+
+<Tabs>
+  <Tab title="Model Optimization" icon="zap">
+    Techniques for improving model performance and efficiency.
+    
+    <Expandable title="Optimization Strategies" default-open="true">
+      - Quantization and pruning
+      - Knowledge distillation
+      - Efficient attention mechanisms
+      - Multi-task learning approaches
+    </Expandable>
+  </Tab>
+  <Tab title="Multilingual Processing" icon="globe">
+    Handling multiple languages and cross-lingual transfer learning.
+    
+    <CodeGroup tabs="Multilingual BERT,XLM-RoBERTa">
+      ````python
+# Multilingual BERT example
+from transformers import BertTokenizer, BertModel
+
+tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')
+model = BertModel.from_pretrained('bert-base-multilingual-cased')
+
+text = "Hello world! Bonjour le monde!"
+tokens = tokenizer.tokenize(text)
+print(f"Multilingual tokens: {tokens}")
+      ````
+      ````python
+# XLM-RoBERTa for better multilingual support
+from transformers import XLMRobertaTokenizer, XLMRobertaModel
+
+tokenizer = XLMRobertaTokenizer.from_pretrained('xlm-roberta-base')
+model = XLMRobertaModel.from_pretrained('xlm-roberta-base')
+
+languages = ["English: Hello world", "French: Bonjour le monde", "Spanish: Hola mundo"]
+for text in languages:
+    tokens = tokenizer.tokenize(text)
+    print(f"{text[:20]}... → {len(tokens)} tokens")
+      ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Production Deployment" icon="server">
+    Best practices for deploying linguistic models in production environments.
+    
+    <Callout kind="info">Focus on model serving latency, memory usage, and scalability when deploying to production.</Callout>
+  </Tab>
+</Tabs>
+
+## Recommended Tools and Libraries
+
+Essential software tools and libraries for linguistic technology development.
+
+| Category | Tool | Description | Use Case |
+|----------|------|-------------|----------|
+| Tokenization | Hugging Face Transformers | Comprehensive tokenization library | All NLP projects |
+| Text Processing | spaCy | Industrial-strength NLP pipeline | Production applications |
+| Model Training | PyTorch | Deep learning framework | Custom model development |
+| Evaluation | NLTK | Natural language toolkit | Research and prototyping |
+
+## Community and Learning Paths
+
+Connect with the broader linguistic technology community and continue your learning journey.
+
+<ExpandableGroup>
+  <Expandable title="Online Communities" default-open="true">
+    - **Hugging Face Forums**: Discuss model implementations and share solutions
+    - **NLP Subreddit**: Community-driven discussions on latest research
+    - **Stack Overflow**: Get help with specific technical challenges
+    - **GitHub Issues**: Contribute to open-source linguistic projects
+  </Expandable>
+  <Expandable title="Learning Platforms" default-open="false">
+    - Coursera: "Natural Language Processing with Deep Learning"
+    - Fast.ai: Practical deep learning for coders
+    - Papers with Code: Research papers with implementations
+    - Towards Data Science: Practical NLP tutorials
+  </Expandable>
+  <Expandable title="Conferences and Events" default-open="false">
+    - ACL (Association for Computational Linguistics)
+    - EMNLP (Empirical Methods in Natural Language Processing)
+    - NeurIPS workshops on language and NLP
+    - Local meetups for hands-on learning
+  </Expandable>
+</ExpandableGroup>
+
+## Staying Current
+
+The field of linguistic technology evolves rapidly. Here are strategies for keeping your knowledge up-to-date.
+
+<Callout kind="tip">Follow key researchers on Twitter and subscribe to the Hugging Face blog for weekly updates on new models and techniques.</Callout>
+
+<Steps>
+  <Step title="Weekly Review" icon="calendar">
+    Set aside time each week to review recent papers and model releases.
+  </Step>
+  <Step title="Experiment Regularly" icon="flask">
+    Try new techniques on small projects to build intuition.
+  </Step>
+  <Step title="Contribute to Open Source" icon="git-branch">
+    Give back to the community by improving existing tools or sharing your work.
+  </Step>
+</Steps>

@@ -1,0 +1,202 @@
+openapi: '3.0.0'
+info:
+  version: 1.0.0
+  title: Token Linguist API
+  license:
+    name: MIT
+servers:
+  - url: https://api.tokenlinguist.com/v1
+paths:
+  /coaching-sessions:
+    get:
+      summary: List all coaching sessions
+      operationId: listCoachingSessions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: A paged array of coaching sessions
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoachingSessions'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Create a new coaching session
+      operationId: createCoachingSession
+      responses:
+        201:
+          description: Session created successfully
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /coaching-sessions/{sessionId}:
+    get:
+      summary: Retrieve details for a specific coaching session
+      operationId: getCoachingSession
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          description: The unique identifier of the coaching session
+          schema:
+            type: string
+      responses:
+        200:
+          description: Detailed information about the requested coaching session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoachingSessions'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /clients:
+    get:
+      summary: Retrieve a list of all registered clients
+      operationId: listClients
+      parameters:
+        - name: status
+          in: query
+          description: Filter clients by their current status in the program
+          required: false
+          schema:
+            type: string
+            enum: [active, inactive, completed]
+      responses:
+        200:
+          description: A comprehensive list of clients with their profile information and progress status
+          headers:
+            x-total-count:
+              description: Total number of clients matching the query
+              schema:
+                type: integer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clients'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /resources:
+    get:
+      summary: Access the collection of learning resources and materials
+      operationId: listResources
+      parameters:
+        - name: category
+          in: query
+          description: Filter resources by category such as tutorials, guides, or tools
+          required: false
+          schema:
+            type: string
+      responses:
+        200:
+          description: Complete catalog of available resources including tutorials, guides, and reference materials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resources'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    CoachingSession:
+      required:
+        - id
+        - clientId
+      properties:
+        id:
+          type: string
+        clientId:
+          type: string
+        topic:
+          type: string
+        scheduledAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [scheduled, completed, cancelled]
+    CoachingSessions:
+      type: array
+      items:
+        $ref: '#/components/schemas/CoachingSession'
+    Client:
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        status:
+          type: string
+          enum: [active, inactive, completed]
+        joinedAt:
+          type: string
+          format: date-time
+    Clients:
+      type: array
+      items:
+        $ref: '#/components/schemas/Client'
+    Resource:
+      required:
+        - id
+        - title
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+        downloadUrl:
+          type: string
+    Resources:
+      type: array
+      items:
+        $ref: '#/components/schemas/Resource'
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

@@ -1,0 +1,138 @@
+---
+title: Services
+description: Detailed overview of coaching and consulting services offered by The Token Linguist
+---
+
+## Our Service Offerings
+
+The Token Linguist provides comprehensive coaching and consulting services tailored to professionals working with linguistic technologies. Whether you're building AI applications, conducting research, or integrating NLP into your business processes, our services are designed to accelerate your success in the field of computational linguistics.
+
+<Columns cols={2}>
+  <Card title="Technical Coaching" icon="code" href="#coaching">
+    Personalized one-on-one coaching sessions focused on developing your skills in tokenization, language models, and NLP implementation.
+  </Card>
+  <Card title="Project Consulting" icon="briefcase" href="#consulting">
+    Expert guidance on planning, implementing, and optimizing linguistic technology projects for businesses and research teams.
+  </Card>
+</Columns>
+
+## Coaching Programs
+
+Our coaching services are structured to provide progressive skill development, starting from foundational concepts and building up to advanced applications. Each program is customized based on your current expertise level and professional objectives.
+
+<Steps>
+  <Step title="Assessment & Planning" icon="clipboard">
+    We begin with a comprehensive assessment of your current skills and goals. This helps us create a personalized learning roadmap that aligns with your professional development needs.
+    
+    <CodeGroup tabs="Python,JavaScript">
+      ````python
+# Example assessment script for tokenization skills
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
+text = "The Token Linguist provides expert coaching."
+tokens = tokenizer.tokenize(text)
+print(f"Tokens: {tokens}")
+print(f"Token count: {len(tokens)}")
+      ````
+      ````javascript
+// JavaScript tokenization assessment
+const text = "The Token Linguist provides expert coaching.";
+const words = text.split(' ');
+console.log(`Words: ${words}`);
+console.log(`Word count: ${words.length}`);
+      ````
+    </CodeGroup>
+  </Step>
+  <Step title="Core Skill Development" icon="book-open">
+    Focused sessions on fundamental concepts including tokenization algorithms, vocabulary management, and basic language model architectures.
+    
+    <Expandable title="Core Topics Covered" default-open="true">
+      - Byte-pair encoding (BPE) implementation
+      - WordPiece and SentencePiece tokenization
+      - Vocabulary optimization techniques
+      - Handling out-of-vocabulary tokens
+    </Expandable>
+  </Step>
+  <Step title="Advanced Applications" icon="zap">
+    Deep dives into complex topics such as fine-tuning models, multi-lingual processing, and performance optimization strategies.
+    
+    <Callout kind="tip">Advanced sessions include hands-on projects where you implement real-world NLP solutions.</Callout>
+  </Step>
+  <Step title="Ongoing Support" icon="refresh-cw">
+    Continued mentorship and code reviews as you apply your new skills to personal or professional projects.
+  </Step>
+</Steps>
+
+## Consulting Services
+
+For organizations and research teams, we offer strategic consulting to help you leverage linguistic technologies effectively. Our consulting engagements are designed to deliver immediate value while building long-term capabilities.
+
+<Tabs>
+  <Tab title="Implementation Strategy" icon="target">
+    Develop comprehensive plans for integrating NLP capabilities into your products or research workflows.
+    
+    <Expandable title="Strategy Components" default-open="false">
+      - Technology stack assessment
+      - Resource planning and budgeting
+      - Timeline development
+      - Risk mitigation strategies
+    </Expandable>
+  </Tab>
+  <Tab title="Architecture Design" icon="layers">
+    Design scalable and maintainable linguistic processing pipelines that can handle production workloads.
+    
+    <CodeGroup tabs="Architecture Diagram,Code Structure">
+      ````mermaid
+graph TD
+    A[Input Text] --> B[Preprocessing]
+    B --> C[Tokenization]
+    C --> D[Model Processing]
+    D --> E[Post-processing]
+    E --> F[Output]
+      ````
+      ````python
+# Example architecture structure
+class NLPPipeline:
+    def __init__(self, tokenizer, model):
+        self.tokenizer = tokenizer
+        self.model = model
+    
+    def process(self, text):
+        tokens = self.tokenizer.tokenize(text)
+        embeddings = self.model.encode(tokens)
+        return self.post_process(embeddings)
+      ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Performance Optimization" icon="trending-up">
+    Optimize your linguistic models for speed, accuracy, and resource efficiency.
+    
+    <Callout kind="info">Performance improvements of 2-5x are common after our optimization consultations.</Callout>
+  </Tab>
+</Tabs>
+
+## Service Packages
+
+We offer flexible service packages designed to fit different needs and budgets. All packages include personalized attention and practical, actionable guidance.
+
+| Package | Duration | Focus | Deliverables |
+|---------|----------|-------|--------------|
+| Starter | 4 weeks | Foundations | Skill assessment, 8 coaching sessions, basic project |
+| Professional | 8 weeks | Implementation | Advanced coaching, code reviews, production deployment |
+| Enterprise | 12 weeks | Optimization | Full consulting engagement, team training, performance tuning |
+
+## Success Metrics
+
+Our services are measured by tangible outcomes. We track improvements in your ability to implement linguistic technologies, deploy successful projects, and achieve your professional goals.
+
+<ExpandableGroup>
+  <Expandable title="Client Outcomes" default-open="true">
+    - 85% of coaching clients successfully implement NLP features in their projects
+    - Average 40% improvement in model performance after consulting engagements
+    - 95% client satisfaction rate with service delivery and results
+  </Expandable>
+  <Expandable title="Industry Recognition" default-open="false">
+    Our approaches have been featured in leading AI and NLP conferences, and our clients have published research in top-tier journals.
+  </Expandable>
+</ExpandableGroup>
